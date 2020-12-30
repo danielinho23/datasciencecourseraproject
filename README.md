@@ -8,7 +8,7 @@ if (!file.exists('./UCI HAR Dataset.zip')){
   unzip("UCI HAR Dataset.zip", exdir = getwd())
 }
 
-###Opening the files
+## Opening the files
 features <- read.csv('./UCI HAR Dataset/features.txt', header = FALSE, sep = ' ') ### open and store the table "feature.txt" in a variable called "feature" without taking the header and the spaces as a parameter to read the table
 features <- as.character(features[,2]) ### the column two from the features tables is converte to a character and it is stored in a variable called "feature"
 
@@ -20,13 +20,13 @@ merge_train <-  data.frame(subject_train, y_train, x_train) ### create a data fr
 names(merge_train) <- c(c('subject', 'activity'), features) ### asigning the name of the colums of the merge_train data frame. For the first two and the other with the previous leaded table "features"
 
 
-#### We are applying the same procedure to the test table. It was loaded the X_test.txt, y_test.txt and subject_test.txt and stored in the variables shown below.
-### It was ommited the headers but the spaces were evaluated to read the tables involved.
+## We are applying the same procedure to the test table. It was loaded the X_test.txt, y_test.txt and subject_test.txt and stored in the variables shown below.
+## It was ommited the headers but the spaces were evaluated to read the tables involved.
 x_test <- read.table('./UCI HAR Dataset/test/X_test.txt')
 y_test <- read.csv('./UCI HAR Dataset/test/y_test.txt', header = FALSE, sep = ' ')
 subject_test <- read.csv('./UCI HAR Dataset/test/subject_test.txt', header = FALSE, sep = ' ')
 
-## it these two lines of code we create the merge_test data frame including the three loaded files and assing the names of the columns.
+## It these two lines of code we create the merge_test data frame including the three loaded files and assing the names of the columns.
 merge_test <-  data.frame(subject_test, y_test, x_test)
 names(merge.test) <- c(c('subject', 'activity'), features)
 
@@ -39,7 +39,7 @@ data.all <- rbind(merge_train, merge_test) """MErging the merge_train and merge_
 mean_std_filter <- grep('mean|std', features) ###looking for the word "mean" or "std" in the features one and assigning it to a variable called mean_std_filter.
 new_data.all <- data.all[,c(1,2,mean_std_filter + 2)] ### create a new table called "new_data.all" with the columns filtered in the previous code line.
 
-### 3. 3. Uses descriptive activity names to name the activities in the data set
+### 3. Uses descriptive activity names to name the activities in the data set
 activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt', header = FALSE) ### open and store the table "activity_labels.txt" in a variable called "activity_labels" without taking the header and the spaces as a parameter to read the table
 activity_labels <- as.character(activity.labels[,2]) """ selecting the second column of the table and converting it into a character one. It is stored in a variable called activity_labels
 new_data.all$activity <- activity_labels[new_data.all$activity]  ###asigning to the column "activity of the new_data.all the description of the activities.
@@ -60,4 +60,4 @@ names(new_data.all) <- name.new ### assigning these changes to the column names 
 ### 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 new_tidy_table <- aggregate(new_data.all[,3:81], by = list(activity = new.data.all$activity, subject = new_data.all$subject),FUN = mean)
 
-###group the information based on two criterias (activity and Subject). Getting the mean for each group. At the end this data frame was assigned to a variable called "new_tidy_table"
+## group the information based on two criterias (activity and Subject). Getting the mean for each group. At the end this data frame was assigned to a variable called "new_tidy_table"
