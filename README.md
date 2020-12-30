@@ -1,8 +1,8 @@
-===========================================================================================================================
+====================================================================================================
 
 This data summarizes the means and standard deviations for each variable taking into account two general groups (activity and subject) using the script attached "run_analysis.R.
 
-===========================================================================================================================
+====================================================================================================
 
 1. It was transformed in tidy data the TRAINING and TESTING ones.
 2. The features.txt was used to assign the column names of both tables mentioned above.
@@ -12,7 +12,7 @@ This data summarizes the means and standard deviations for each variable taking 
 6. The variables (columns) were renamed in order make them more understandable.
 7. IT was obtained the mean for all the variables based on two categories (activity and subject)
 
-============================================================================================
+====================================================================================================
 
 The project includes:
 
@@ -21,7 +21,7 @@ The project includes:
 - Data Frame (the result after running the code)
 - run_analysis.R: Script to reproduce the cleanning process
 
-_____________________________________________________________________________________________--
+____________________________________________________________________________________________________
 
 ### The detailed information of the original project are as followed:
 
