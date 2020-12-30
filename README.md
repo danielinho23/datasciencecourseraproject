@@ -1,6 +1,6 @@
 ===========================================================================================================================
 
-This data summarizes the means and standard deviations for each variable taking into account two general groups (activity and subject).
+This data summarizes the means and standard deviations for each variable taking into account two general groups (activity and subject) using the script attached "run_analysis.R.
 
 ===========================================================================================================================
 
