@@ -9,8 +9,11 @@ if (!file.exists('./UCI HAR Dataset.zip')){
 }
 
 #### Opening the files
+
+```ruby
 features <- read.csv('./UCI HAR Dataset/features.txt', header = FALSE, sep = ' ') ### open and store the table "feature.txt" in a variable called "feature" without taking the header and the spaces as a parameter to read the table
 features <- as.character(features[,2]) ### the column two from the features tables is converte to a character and it is stored in a variable called "feature"
+```
 
 x_train <- read.table('./UCI HAR Dataset/train/X_train.txt') ### open and store the table "X_train.txt" in a variable called "x_train" without taking the header and the spaces as a parameter to read the table
 y_train <- read.csv('./UCI HAR Dataset/train/y_train.txt', header = FALSE, sep = ' ') ### open and store the table "y_train.txt" in a variable called "y_train" without taking the header and the spaces as a parameter to read the table
