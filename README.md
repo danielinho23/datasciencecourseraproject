@@ -10,6 +10,7 @@ This data summarizes the means and standard deviations for each variable taking 
 4. There were selected just the variables who store information related to the mean and standard deviation.
 5. It was applied a descriptive method based on the labels_activity_txt file.
 6. The variables (columns) were renamed in order make them more understandable.
+7. IT was obtained the mean for all the variables based on two categories (activity and subject)
 
 ============================================================================================
 
